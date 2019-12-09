@@ -26,6 +26,20 @@ class Contact extends Message
     protected $phone_number;
 
     /**
+     * Url to avatar
+     *
+     * @var string
+     */
+    protected $avatar;
+
+    /**
+     * Additional text (for share-phone action-type etc.)
+     *
+     * @var string
+     */
+    protected $text;
+
+    /**
      * {@inheritdoc}
      */
     protected $propertiesMap = [
@@ -46,9 +60,11 @@ class Contact extends Message
     public function toArray()
     {
         return array_merge(parent::toArray(), [
+            'text' => $this->getText(),
             'contact' => [
                 'name' => $this->getName(),
                 'phone_number' => $this->getPhoneNumber(),
+                'avatar' => $this->getAvatar()
             ]
         ]);
     }
@@ -99,6 +115,38 @@ class Contact extends Message
         $this->phone_number = $phone_number;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getAvatar(): string
+    {
+        return $this->avatar;
+    }
+
+    /**
+     * @param string $avatar
+     */
+    public function setAvatar(string $avatar)
+    {
+        $this->avatar = $avatar;
+    }
+
+    /**
+     * @return string
+     */
+    public function getText(): string
+    {
+        return $this->text;
+    }
+
+    /**
+     * @param string $text
+     */
+    public function setText(string $text)
+    {
+        $this->text = $text;
     }
 
     /**
