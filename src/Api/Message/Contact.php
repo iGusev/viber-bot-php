@@ -121,7 +121,7 @@ class Contact extends Message
     /**
      * @return string
      */
-    public function getAvatar(): string
+    public function getAvatar()
     {
         return $this->avatar;
     }
@@ -129,7 +129,7 @@ class Contact extends Message
     /**
      * @param string $avatar
      */
-    public function setAvatar(string $avatar)
+    public function setAvatar($avatar)
     {
         $this->avatar = $avatar;
     }
@@ -137,7 +137,7 @@ class Contact extends Message
     /**
      * @return string
      */
-    public function getText(): string
+    public function getText()
     {
         return $this->text;
     }
@@ -145,7 +145,7 @@ class Contact extends Message
     /**
      * @param string $text
      */
-    public function setText(string $text)
+    public function setText($text)
     {
         $this->text = $text;
     }
