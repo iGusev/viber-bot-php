@@ -155,7 +155,7 @@ class Sender extends Entity
     /**
      * @return string
      */
-    public function getLanguage(): string
+    public function getLanguage()
     {
         return $this->language;
     }
@@ -171,7 +171,7 @@ class Sender extends Entity
     /**
      * @return string
      */
-    public function getCountry(): string
+    public function getCountry()
     {
         return $this->country;
     }
@@ -187,7 +187,7 @@ class Sender extends Entity
     /**
      * @return int
      */
-    public function getApiVersion(): int
+    public function getApiVersion()
     {
         return $this->api_version;
     }
