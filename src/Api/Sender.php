@@ -31,11 +31,37 @@ class Sender extends Entity
     protected $avatar;
 
     /**
+     * User’s phone language. Will be returned according to the device language
+     *
+     * @see ISO 639-1
+     *
+     * @var string
+     */
+    protected $language;
+
+    /**
+     * User's country code
+     *
+     * @var string
+     */
+    protected $country;
+
+    /**
+     * Max API version, matching the most updated user's device
+     *
+     * @var integer
+     */
+    protected $api_version;
+
+    /**
      * {@inheritDoc}
      */
     protected $propertiesMap = [
         'id' => 'setId',
         'name' => 'setName',
+        'language' => 'setLanguage',
+        'country' => 'setCountry',
+        'api_version' => 'setApiVersion',
         'avatar' => 'setAvatar',
     ];
 
@@ -47,6 +73,9 @@ class Sender extends Entity
         return [
             'id' => $this->getId(),
             'name' => $this->getName(),
+            'language' => $this->getLanguage(),
+            'country' => $this->getCountry(),
+            'api_version' => $this->getApiVersion(),
             'avatar' => $this->getAvatar(),
         ];
     }
@@ -121,5 +150,53 @@ class Sender extends Entity
         $this->avatar = $avatar;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getLanguage(): string
+    {
+        return $this->language;
+    }
+
+    /**
+     * @param string $language
+     */
+    public function setLanguage(string $language)
+    {
+        $this->language = $language;
+    }
+
+    /**
+     * @return string
+     */
+    public function getCountry(): string
+    {
+        return $this->country;
+    }
+
+    /**
+     * @param string $country
+     */
+    public function setCountry(string $country)
+    {
+        $this->country = $country;
+    }
+
+    /**
+     * @return int
+     */
+    public function getApiVersion(): int
+    {
+        return $this->api_version;
+    }
+
+    /**
+     * @param int $api_version
+     */
+    public function setApiVersion(int $api_version)
+    {
+        $this->api_version = $api_version;
     }
 }
