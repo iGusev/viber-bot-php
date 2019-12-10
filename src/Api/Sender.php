@@ -163,7 +163,7 @@ class Sender extends Entity
     /**
      * @param string $language
      */
-    public function setLanguage(string $language)
+    public function setLanguage($language)
     {
         $this->language = $language;
     }
@@ -179,7 +179,7 @@ class Sender extends Entity
     /**
      * @param string $country
      */
-    public function setCountry(string $country)
+    public function setCountry($country)
     {
         $this->country = $country;
     }
@@ -195,7 +195,7 @@ class Sender extends Entity
     /**
      * @param int $api_version
      */
-    public function setApiVersion(int $api_version)
+    public function setApiVersion($api_version)
     {
         $this->api_version = $api_version;
     }
