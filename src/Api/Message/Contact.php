@@ -44,7 +44,7 @@ class Contact extends Message
      */
     protected $propertiesMap = [
         'text' => 'setText',
-        'contact' => 'setConcat'
+        'contact' => 'setContact'
     ];
 
     /**
@@ -121,7 +121,7 @@ class Contact extends Message
     /**
      * @return string
      */
-    public function getAvatar()
+    public function getAvatar(): string
     {
         return $this->avatar;
     }
@@ -129,7 +129,7 @@ class Contact extends Message
     /**
      * @param string $avatar
      */
-    public function setAvatar($avatar)
+    public function setAvatar(string $avatar)
     {
         $this->avatar = $avatar;
     }
@@ -137,7 +137,7 @@ class Contact extends Message
     /**
      * @return string
      */
-    public function getText()
+    public function getText(): string
     {
         return $this->text;
     }
@@ -145,7 +145,7 @@ class Contact extends Message
     /**
      * @param string $text
      */
-    public function setText($text)
+    public function setText(string $text)
     {
         $this->text = $text;
     }
@@ -157,11 +157,11 @@ class Contact extends Message
      *
      * @return self
      */
-    public function setConcat($contact)
+    public function setContact($contact)
     {
-        $this->name = $contact['name'];
-        $this->phone_number = $contact['phone_number'];
-        $this->avatar = $contact['avatar'];
+        $this->name = isset($contact['name']) ? $contact['name'] : null;
+        $this->phone_number = isset($contact['phone_number']) ? $contact['phone_number'] : null;
+        $this->avatar = isset($contact['avatar']) ? $contact['avatar'] : null;
 
         return $this;
     }
